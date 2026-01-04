@@ -12,21 +12,19 @@ namespace Water4ENBwatercolor
 
     public class Program
     {
-        // Settings holder for older Synthesis versions
-        //private static PatcherSettings? _settings;
         private static Lazy<Settings.Settings> _settings = null!;
 
-        // "Natural Shades of Skyrim" colors
-        private static readonly Color NaturalSunrise = Color.FromArgb(137, 160, 171);
-        private static readonly Color NaturalDay = Color.FromArgb(175, 216, 237);
-        private static readonly Color NaturalSunset = Color.FromArgb(105, 142, 154);
-        private static readonly Color NaturalNight = Color.FromArgb(31, 63, 75);
+        // ENB colors
+        private static readonly Color ENBSunrise = Color.FromArgb(137, 160, 171);
+        private static readonly Color ENBDay = Color.FromArgb(175, 216, 237);
+        private static readonly Color ENBSunset = Color.FromArgb(105, 142, 154);
+        private static readonly Color ENBNight = Color.FromArgb(31, 63, 75);
 
-        // "Shades of Skyrim" colors 
-        private static readonly Color ShadesSunrise = Color.FromArgb(154, 154, 154);
-        private static readonly Color ShadesDay = Color.FromArgb(210, 210, 210);
-        private static readonly Color ShadesSunset = Color.FromArgb(138, 138, 138);
-        private static readonly Color ShadesNight = Color.FromArgb(60, 60, 60);
+        // CS colors 
+        private static readonly Color CSSunrise = Color.FromArgb(154, 154, 154);
+        private static readonly Color CSDay = Color.FromArgb(210, 210, 210);
+        private static readonly Color CSSunset = Color.FromArgb(138, 138, 138);
+        private static readonly Color CSNight = Color.FromArgb(60, 60, 60);
 
 
         public static async Task<int> Main(string[] args)
@@ -43,19 +41,19 @@ namespace Water4ENBwatercolor
         {
 
             Color targetSunrise, targetDay, targetSunset, targetNight;
-            if (_settings.Value.NaturalShadesOfSkyrim)
+            if (_settings.Value.ENB)
             {
-                targetSunrise = NaturalSunrise;
-                targetDay = NaturalDay;
-                targetSunset = NaturalSunset;
-                targetNight = NaturalNight;
+                targetSunrise = ENBSunrise;
+                targetDay = ENBDay;
+                targetSunset = ENBSunset;
+                targetNight = ENBNight;
             }
             else
             {
-                targetSunrise = ShadesSunrise;
-                targetDay = ShadesDay;
-                targetSunset = ShadesSunset;
-                targetNight = ShadesNight;
+                targetSunrise = CSSunrise;
+                targetDay = CSDay;
+                targetSunset = CSSunset;
+                targetNight = CSNight;
             }
 
             int patchedCount = 0;

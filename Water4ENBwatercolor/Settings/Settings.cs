@@ -1,7 +1,7 @@
 namespace Water4ENBwatercolor.Settings {
     class Settings
     {
-        public bool NaturalShadesOfSkyrim { get; set; } = false;
+        public bool ENB { get; set; } = false;
 
     }
 }
